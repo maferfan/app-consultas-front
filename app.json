@@ -11,6 +11,11 @@
     "ios": {
       "supportsTablet": true
     },
+    "expo": {
+      "web": {
+        "bundler": "metro"
+      }
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
