@@ -23,10 +23,19 @@ export default function Login() {
           value={""}
           placeholder="Senha"
         />
+<<<<<<< HEAD
 
         <Text className="mt-12 w-[80%] text-center rounded-tl-3xl rounded-b-3xl p-4 bg-black text-white">
           Acessar
         </Text>
+=======
+          <Text className="mt-12 w-[80%] text-center rounded-tl-3xl rounded-b-3xl p-4 bg-black text-white">
+        <Link href="/(user)/home">
+            Acessar
+        </Link>
+          </Text>
+
+>>>>>>> a345682 (feat: front data)
         <Link href="/register" className="mt-16 font-bold">
           Não tem conta? registre-se
         </Link>
