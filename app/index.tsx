@@ -10,9 +10,9 @@ export default function Login() {
   const { handleAuthLogin } = useContext(AuthContext);
   const [login, setLogin] = useState("");
   const [pass, setPass] = useState("");
-  const {handleSubmit, control, } = useForm({
+  // const {handleSubmit, control, } = useForm({
   
-  })
+  // })
   return (
     <SafeAreaView className="flex-1 bg-black">
       <View className="bg-black flex-[0.3] items-center justify-center">
