@@ -1,17 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { Tabs } from "expo-router";
+import { TabBar } from "@/components/TabBar";
 
+export default function UserLayout() {
 
-
-export default  function UserLayout(){
-    return(
-        <Tabs>
-            <Tabs.Screen name="home" options={{
-                tabBarIcon: () => <FontAwesomeIcon icon="home" size={20}/>
-            }}/>
-            <Tabs.Screen name="perfil" options={{
-                tabBarIcon: () => <FontAwesomeIcon icon="home"/>
-            }}/>
-        </Tabs>
-    )
+  return (
+    <Tabs tabBar={(props) => <TabBar {...props} />}>
+      <Tabs.Screen name="home" options={{headerShown: false}}/>
+      <Tabs.Screen name="perfil" />
+      <Tabs.Screen name="sair" />
+    </Tabs>
+  );
 }

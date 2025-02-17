@@ -1,12 +1,10 @@
 import { SafeAreaView, Text } from "react-native";
 
 
-export default function Perfil(){
-    
-      
+export default function Sair(){
     return(
         <SafeAreaView>
-            <Text>Perfil</Text>
+            <Text>Sair</Text>
         </SafeAreaView>
     )
 }

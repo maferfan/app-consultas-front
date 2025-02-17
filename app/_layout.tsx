@@ -1,15 +1,15 @@
 import { Stack } from "expo-router";
-
-
-export default function RootLayout(){
-    return (
-        <Stack screenOptions={{headerShown: false}}>
-            <Stack.Screen name="index"/>
-            <Stack.Screen name="register"/>
-<<<<<<< HEAD
-=======
-            <Stack.Screen name="(user)"/>
->>>>>>> a345682 (feat: front data)
-        </Stack>
-    )
+import "../global.css";
+import { AuthProvider } from "@/context/authContext";
+export default function RootLayout() {
+  
+  return (
+    <AuthProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="register" />
+        <Stack.Screen name="(user)" />
+      </Stack>
+    </AuthProvider>
+  );
 }
