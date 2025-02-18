@@ -4,6 +4,7 @@ import { AuthContextProps, AuthProviderProps } from "@/types/auth.types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
 import { createContext, useEffect } from "react";
+import Toast from "react-native-toast-message";
 
 export const AuthContext = createContext<AuthContextProps>(
   {} as AuthContextProps
@@ -32,7 +33,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
       senha: pass,
     });
     dispatch({ type: "SET-USER-ON", payload: { value: data } });
-    router.push("/(user)/home")
+    if(data.auth){
+      router.push('/(user)/home')
+      Toast.show({
+        type: 'success',
+        text1: 'Bem vindo, ',
+        text2: `${email}`,
+        position: 'bottom'
+      })
+    }
   };
 
   const handleAuthLogout = async () => {
@@ -40,6 +49,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     //   email: "matheusfer@gmail.com",
     //   senha: "12345",
     // });
+    await AsyncStorage.removeItem('token')
     dispatch({ type: "SET-USER-OFF", payload: { value: null } });
     router.replace('/')
   };

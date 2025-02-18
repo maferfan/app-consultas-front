@@ -1,4 +1,7 @@
+import { AxiosError } from "axios";
 import { api } from "./instance";
+import Toast from "react-native-toast-message";
+import { Errors } from "@/utils/errors";
 
 export const authService = {
   authUser: async (login: { email: string; senha: string }) => {
@@ -6,8 +9,7 @@ export const authService = {
       const response = await api.post("/login", login);
       return response.data;
     } catch (error) {
-        console.log(error)
-        throw error
+      Errors(error)
     }
   },
 };
