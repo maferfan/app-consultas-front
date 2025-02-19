@@ -15,6 +15,7 @@ import { useForm, Controller, FieldValues } from "react-hook-form";
 import { loginFormSchema, LoginSchema } from "@/schemas/login";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { errorsMessage } from "@/hooks/useErrorsMessage";
 export default function Login() {
   const { handleAuthLogin } = useContext(AuthContext);
   const [eyeOpen, setEyeOpen] = useState(false);
@@ -55,9 +56,7 @@ export default function Login() {
             />
           )}
         />
-        {errors.email && (
-          <Text className="text-red-500">{errors.email.message}</Text>
-        )}
+        {errorsMessage(errors.email)}
         <View className="relative items-center w-[100%]">
           <Controller
             control={control}
@@ -84,9 +83,7 @@ export default function Login() {
               />
             </Pressable>
           </View>
-          {errors.senha && (
-            <Text className="text-red-500">{errors.senha.message}</Text>
-          )}
+          {errorsMessage(errors.senha)}
         </View>
         <TouchableOpacity
           className="mt-12 w-[80%] rounded-tl-3xl rounded-b-3xl p-4 bg-black"

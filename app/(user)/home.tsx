@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { Button, Pressable, Text, TextInput, View } from "react-native";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faSearch, faList } from "@fortawesome/free-solid-svg-icons";
 import { Select } from "@/components/Select";
 import { useContext } from "react";
