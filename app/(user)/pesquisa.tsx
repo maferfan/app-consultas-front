@@ -4,12 +4,13 @@ import { faSearch, faList } from "@fortawesome/free-solid-svg-icons";
 import { Select } from "@/components/Select";
 import { useContext } from "react";
 import { AuthContext } from "@/context/authContext";
+import { ListaMedicos } from "@/components/ListaMedicos";
 
-export default function Home() {
+export default function Pesquisa() {
   const { handleAuthLogout } = useContext(AuthContext);
 
   return (
-    <View className="bg-black flex-1 items-center ">
+    <View className="flex-1 items-center ">
       <View className="relative w-[80%] top-20">
         <TextInput
           className="bg-gray-200 rounded-xl h-15 border p-5 pl-12 w-full"
@@ -36,6 +37,7 @@ export default function Home() {
       >
         <Text className="text-center text-white">Sair</Text>
       </Pressable>
+      <ListaMedicos/>
     </View>
   );
 }

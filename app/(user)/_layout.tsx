@@ -5,7 +5,7 @@ export default function UserLayout() {
 
   return (
     <Tabs tabBar={(props) => <TabBar {...props} />}>
-      <Tabs.Screen name="home" options={{headerShown: false}}/>
+      <Tabs.Screen name="pesquisa" options={{headerShown: false}}/>
       <Tabs.Screen name="perfil" />
       <Tabs.Screen name="sair" />
     </Tabs>

@@ -21,7 +21,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             type: "SET-USER-ON",
             payload: { value: JSON.parse(token as string) },
           });
-          router.replace('/(user)/home')
+          router.replace('/(user)/pesquisa')
         }
     }
     data()
@@ -34,7 +34,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     });
     dispatch({ type: "SET-USER-ON", payload: { value: data } });
     if(data.auth){
-      router.push('/(user)/home')
+      router.push('/(user)/pesquisa')
       Toast.show({
         type: 'success',
         text1: 'Bem vindo, ',

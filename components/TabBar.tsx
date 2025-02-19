@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Text, TouchableOpacity, View } from "react-native";
-import { faAdjust, faHome, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faAdjust, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const fontIcons = (name: string) => {
     switch(name){
-        case "home":
-            return <FontAwesomeIcon icon={faHome} size={25}/>
+        case "pesquisa":
+            return <FontAwesomeIcon icon={faSearch} size={25}/>
         case "perfil":
             return <FontAwesomeIcon icon={faUser} size={25}/>
         case "sair":
