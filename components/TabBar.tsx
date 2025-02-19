@@ -1,18 +1,23 @@
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { Text, TouchableOpacity, View } from "react-native";
-import { faAdjust, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { TouchableOpacity, View } from "react-native";
+import {
+  faSearch,
+  faUser,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import { TooltipInfoExit } from "./Tooltip";
 export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   const fontIcons = (name: string) => {
-    switch(name){
-        case "pesquisa":
-            return <FontAwesomeIcon icon={faSearch} size={25}/>
-        case "perfil":
-            return <FontAwesomeIcon icon={faUser} size={25}/>
-        case "sair":
-            return <FontAwesomeIcon icon={faAdjust} size={25}/>
+    switch (name) {
+      case "pesquisa":
+        return <FontAwesomeIcon icon={faSearch} size={25} />;
+      case "perfil":
+        return <FontAwesomeIcon icon={faUser} size={25} />;
+      case "sair":
+        return <TooltipInfoExit/>;
     }
-  }
+  };
   return (
     <View className="absolute flex-row justify-center items-center mx-20 bottom-16 bg-gray-300 p-5 rounded-3xl">
       {state.routes.map((route, index) => {
