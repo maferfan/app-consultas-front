@@ -1,6 +1,5 @@
 import { Tabs } from "expo-router";
 import { TabBar } from "@/components/TabBar";
-import { TooltipInfoExit } from "@/components/Tooltip";
 
 export default function UserLayout() {
 

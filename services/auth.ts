@@ -1,6 +1,4 @@
-import { AxiosError } from "axios";
 import { api } from "./instance";
-import Toast from "react-native-toast-message";
 import { Errors } from "@/utils/errors";
 
 export const authService = {

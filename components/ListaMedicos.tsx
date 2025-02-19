@@ -1,9 +1,16 @@
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons";
-export function ListaMedicos() {
+import { Medico } from "@/types/medicos.types";
+type ListaMedicos = {
+  medico: Medico;
+};
+
+export function ListaMedicos({ medico }: ListaMedicos) {
+  const imgUrl = medico.fotoPerfil?.slice(1);
+ 
   return (
     <LinearGradient
       colors={["#d9d9d9", "#737373"]}
@@ -13,20 +20,24 @@ export function ListaMedicos() {
         marginTop: 10,
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         padding: 10,
-        width: "80%",
+        width: "90%",
         borderTopLeftRadius: 20,
         borderBottomEndRadius: 20,
         borderBottomLeftRadius: 20,
       }}
     >
-      <View className="items-center">
-        <Text className="font-bold">Dr(a) Matheus</Text>
-        <Text className="text-gray-600 italic">Cardiologista</Text>
-        <Text className="mt-2 text-red-500 p-10 bg-black rounded-full text-center">
-          MF
-        </Text>
+      <View className="items-center flex-1">
+        <Text className="font-bold">Dr(a) {medico.nome}</Text>
+
+        <Image
+          source={{
+            uri: `http://localhost:8082/uploads/${imgUrl ?? "1739584017883-images.jpeg"}`,
+          }}
+          style={{ width: 80, height: 80, borderRadius: 50, marginTop: 10 }}
+        />
+          <Text className="text-gray-600 italic mt-2">{medico.especialidade}</Text>
       </View>
       <View>
         <View className="items-center flex-row gap-3">
