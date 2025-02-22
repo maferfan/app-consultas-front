@@ -1,5 +1,5 @@
-import { medicoService } from '@/services/medicos';
-import { Especialidade } from '@/types/medicos.types';
+import { medicoService } from '@/src/services/medicos';
+import { Especialidade } from '@/src/types/medicos.types';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';

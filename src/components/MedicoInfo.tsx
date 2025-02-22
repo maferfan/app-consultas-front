@@ -3,7 +3,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { Medico } from "@/types/medicos.types";
+import { Medico } from "@/src/types/medicos.types";
 type ListaMedicos = {
   medico: Medico;
 };

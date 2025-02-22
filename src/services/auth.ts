@@ -1,5 +1,5 @@
 import { api } from "./instance";
-import { Errors } from "@/utils/errors";
+import { Errors } from "@/src/utils/errors";
 
 export const authService = {
   authUser: async (login: { email: string; senha: string }) => {

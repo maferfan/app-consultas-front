@@ -1,10 +1,10 @@
-import { useAuthReducer } from "@/reducer/useAuthReducer";
-import { authService } from "@/services/auth";
-import { AuthContextProps, AuthProviderProps } from "@/types/auth.types";
+import { AuthContextProps, AuthProviderProps } from "@/src/types/auth.types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
 import { createContext, useEffect } from "react";
 import Toast from "react-native-toast-message";
+import { useAuthReducer } from "../reducer/useAuthReducer";
+import { authService } from "../services/auth";
 
 export const AuthContext = createContext<AuthContextProps>(
   {} as AuthContextProps

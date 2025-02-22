@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { medicoService } from "@/services/medicos";
-import { Especialidade, Medico } from "@/types/medicos.types";
+import { medicoService } from "@/src/services/medicos";
+import { Especialidade, Medico } from "@/src/types/medicos.types";
 
 type MedicosStore = {
   medicos: Medico[];

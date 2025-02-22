@@ -1,10 +1,10 @@
 import { Button, FlatList, Pressable, TextInput, View } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faSearch, faList } from "@fortawesome/free-solid-svg-icons";
-import { Select } from "@/components/Select";
-import { MedicoInfo } from "@/components/MedicoInfo";
+import { Select } from "@/src/components/Select";
+import { MedicoInfo } from "@/src/components/MedicoInfo";
 import { useCallback, useEffect } from "react";
-import { useMedicosStore } from "@/store/useMedicosStore";
+import { useMedicosStore } from "@/src/store/useMedicosStore";
 
 export default function Pesquisa() {
   const {

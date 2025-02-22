@@ -4,7 +4,7 @@ import {  Pressable, ScrollView, StyleSheet, Text } from "react-native";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { View } from "react-native";
-import { AuthContext } from "@/context/authContext";
+import { AuthContext } from "@/src/context/authContext";
 
 interface ControlledTooltipProps extends TooltipProps {
   children: ReactNode;

@@ -1,5 +1,5 @@
 import { api } from "./instance";
-import { Errors } from "@/utils/errors";
+import { Errors } from "@/src/utils/errors";
 
 export const medicoService = {
   medicos: async (data: {

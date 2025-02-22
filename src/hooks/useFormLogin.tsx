@@ -13,11 +13,11 @@ import {
   FieldValues,
   UseFormHandleSubmit,
 } from "react-hook-form";
-import { LoginSchema } from "@/schemas/login";
+import { LoginSchema } from "@/src/schemas/login";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { useContext, useState } from "react";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { AuthContext } from "@/context/authContext";
+import { AuthContext } from "@/src/context/authContext";
 type UseFormController = {
   control: Control<LoginSchema>;
   errors: FieldErrors<LoginSchema>;
@@ -30,10 +30,10 @@ export const UseFormLogin = ({
   handleSubmit,
 }: UseFormController) => {
   const [eyeOpen, setEyeOpen] = useState(false);
-const { handleAuthLogin } = useContext(AuthContext);
+  const { handleAuthLogin } = useContext(AuthContext);
   const handleValues = async (data: FieldValues) => {
-      await handleAuthLogin(data.email, data.senha);
-    };
+    await handleAuthLogin(data.email, data.senha);
+  };
   return (
     <View className="bg-white flex-[0.8] rounded-tl-[150px] items-center">
       <Text className="text-center mt-20 font-bold text-[40px]">Login</Text>
@@ -84,7 +84,6 @@ const { handleAuthLogin } = useContext(AuthContext);
       >
         <Text className="text-center text-white">Acessar</Text>
       </TouchableOpacity>
-     
     </View>
   );
 };

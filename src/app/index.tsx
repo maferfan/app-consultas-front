@@ -2,10 +2,12 @@ import { SafeAreaView, Text, View } from "react-native";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { useForm } from "react-hook-form";
-import { loginFormSchema, LoginSchema } from "@/schemas/login";
+import { loginFormSchema, LoginSchema } from "@/src/schemas/login";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { UseFormLogin } from "@/hooks/useFormLogin";
+import { UseFormLogin } from "@/src/hooks/useFormLogin";
 import { Link } from "expo-router";
+
+
 export default function Login() {
   const {
     handleSubmit,

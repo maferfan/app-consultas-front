@@ -1,4 +1,4 @@
-import { AuthAction, AuthState } from "@/types/auth.types";
+import { AuthAction, AuthState } from "@/src/types/auth.types";
 import { useReducer } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
