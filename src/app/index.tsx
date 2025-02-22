@@ -16,7 +16,7 @@ export default function Login() {
   } = useForm<LoginSchema>({
     resolver: zodResolver(loginFormSchema),
   });
-
+  
   return (
     <SafeAreaView className="flex-1 bg-black">
       <View className="bg-black flex-[0.3] items-center justify-center">

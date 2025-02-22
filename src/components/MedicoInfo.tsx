@@ -10,7 +10,6 @@ type ListaMedicos = {
 
 export function MedicoInfo({ medico }: ListaMedicos) {
   const imgUrl = medico.fotoPerfil?.slice(1);
- 
   return (
     <LinearGradient
       colors={["#d9d9d9", "#737373"]}

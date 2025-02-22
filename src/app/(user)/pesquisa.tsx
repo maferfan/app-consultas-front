@@ -24,7 +24,6 @@ export default function Pesquisa() {
   useEffect(() => {
     handleFetchMedicos();
   }, [handleFetchMedicos]);
-
   return (
     <View className="bg-black flex-1 items-center ">
       <View className="relative w-[80%] top-20">
