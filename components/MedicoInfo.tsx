@@ -8,7 +8,7 @@ type ListaMedicos = {
   medico: Medico;
 };
 
-export function ListaMedicos({ medico }: ListaMedicos) {
+export function MedicoInfo({ medico }: ListaMedicos) {
   const imgUrl = medico.fotoPerfil?.slice(1);
  
   return (
@@ -39,7 +39,7 @@ export function ListaMedicos({ medico }: ListaMedicos) {
         />
           <Text className="text-gray-600 italic mt-2">{medico.especialidade}</Text>
       </View>
-      <View>
+      <View className="pr-5">
         <View className="items-center flex-row gap-3">
           <FontAwesomeIcon icon={faLocation} size={15} />
           <Text className="text-gray-600 italic">Joinville - SC</Text>

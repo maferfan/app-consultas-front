@@ -11,3 +11,8 @@ export type Medico = {
     sobrenome: string
     type: string
   }
+
+export type Especialidade = {
+  id: number,
+  nome: string
+}

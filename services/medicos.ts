@@ -15,6 +15,14 @@ export const medicoService = {
       Errors(error)
     }
   },
+  medicosEspecialidade: async () => {
+    try {
+      const response = await api.get("/medicoEspecialidades");
+      return response.data;
+    } catch (error) {
+      Errors(error)
+    }
+  },
 };
 
 
