@@ -11,7 +11,9 @@ export default function Pesquisa() {
     medicos,
     filtroActive,
     especialidade,
+    especialidades,
     fetchMedicos,
+    fetchEspecialidades,
     setName,
     setFiltroActive,
     setEspecialidade,
@@ -21,9 +23,18 @@ export default function Pesquisa() {
     fetchMedicos();
   }, [filtroActive, especialidade]);
 
+  const handleFetchEspecialidades = useCallback(() => {
+    fetchEspecialidades();
+  }, [especialidades]);
+
+  useEffect(() => {
+    handleFetchEspecialidades();
+  }, [handleFetchEspecialidades]);
+
   useEffect(() => {
     handleFetchMedicos();
   }, [handleFetchMedicos]);
+
   return (
     <View className="bg-black flex-1 items-center ">
       <View className="relative w-[80%] top-20">
@@ -57,7 +68,13 @@ export default function Pesquisa() {
           </View>
         </View>
         {filtroActive && (
-          <Select setValue={setEspecialidade} value={especialidade} />
+          <View className="w-[200]">
+            <Select
+              onChange={setEspecialidade}
+              value={especialidade}
+              data={especialidades}
+            />
+          </View>
         )}
       </View>
       <View className="mt-5">

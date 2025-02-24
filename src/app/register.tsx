@@ -9,8 +9,20 @@ import {
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { Link, router } from "expo-router";
-
+import { UseFormRegister } from "@/src/hooks/useFormRegister";
+import { useForm } from "react-hook-form";
+import { registerFormSchema, RegisterSchema } from "../schemas/register";
+import { zodResolver } from "@hookform/resolvers/zod";
 export default function Register() {
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+    getValues,
+    watch
+  } = useForm<RegisterSchema>({
+    resolver: zodResolver(registerFormSchema),
+  });
   return (
     <SafeAreaView className="flex-1 bg-black">
       <Pressable
@@ -25,63 +37,23 @@ export default function Register() {
         </Text>
       </Pressable>
       <View className="bg-white flex-1 rounded-tl-[150px] items-center">
-          <ScrollView showsVerticalScrollIndicator={false} className="mt-12 max-h-[500px] p-2 w-[70%]" >
-        <View className="bg-white flex-[0.8] rounded-tl-[150px] w-[100%]">
-            <TextInput
-              className="mt-24 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Nome"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Sobrenome"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Email"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Senha"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Confirmar senha"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Tipo"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Especialidade"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="CRM"
-            />
-            <TextInput
-              className=" mt-8 flex items-center bg-gray-200 rounded-xl  h-15 border-1 p-5"
-              value={""}
-              placeholder="Descrição"
-            />
-            <Text className="mt-6  text-center rounded-tl-3xl rounded-b-3xl p-4 bg-black text-white">
-              Registrar
-            </Text>
-            <Pressable className="mt-6" onPress={() => router.back()}>
-              <Text className="font-bold text-center">
-                Já tem conta? Faça o login
-              </Text>
-            </Pressable>
-        </View>
-          </ScrollView>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          className="mt-12 max-h-[500px] p-2 w-[70%]"
+        >
+          <UseFormRegister
+            control={control}
+            handleSubmit={handleSubmit}
+            errors={errors}
+            watch={watch}
+          />
+        </ScrollView>
+        
+        <Pressable className="mt-16" onPress={() => router.back()}>
+          <Text className="font-bold text-center">
+            Já tem conta? Faça o login
+          </Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );

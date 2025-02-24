@@ -6,17 +6,20 @@ type MedicosStore = {
   medicos: Medico[];
   filtroActive: boolean;
   especialidade: Especialidade;
+  especialidades: Especialidade[];
   name: string;
   setFiltroActive: (active: boolean) => void;
   setEspecialidade: (especialidade: Especialidade) => void;
   setName: (name: string) => void;
   fetchMedicos: () => Promise<void>;
+  fetchEspecialidades: () => Promise<void>;
 };
 
 export const useMedicosStore = create<MedicosStore>((set, get) => ({
   medicos: [],
   filtroActive: false,
   especialidade: {} as Especialidade,
+  especialidades: [],
   name: "",
   setFiltroActive: (active) => set({ filtroActive: active }),
   setEspecialidade: (especialidade) => set({ especialidade }),
@@ -30,5 +33,9 @@ export const useMedicosStore = create<MedicosStore>((set, get) => ({
       });
       set({ medicos: data });
     }
+  },
+  fetchEspecialidades: async () => {
+    const data = await medicoService.medicosEspecialidade();
+    set({especialidades: data})
   },
 }));
